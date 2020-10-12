@@ -18,3 +18,11 @@
 - 과제의 기한은 5일이지만 해당 기한을 넘겨 제출 해야 할 사유가 있을 경우 공유해요! 해당 과정에 즐겁게 참여했으면 좋겠어요 :smile:
 - 수평적인 문화를 지향해요! 자유로운 의견, 피드백은 환영합니다 :musical_note:
 - 과제는 master 브랜치의 assignment 폴더에서 확인해요! 과제에 대한 제출은 submit 브랜치에 업데이트하고, 과제 제출 후 같이 리뷰하고 회고의 시간을 가져요!
+
+<hr>
+
+
+### :clipboard: Assignment 
+|주 차|기 간|
+|------|---|
+|[1주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/1%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.12(Mon) ~ 10.18(Sun)|
