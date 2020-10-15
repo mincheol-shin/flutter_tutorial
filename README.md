@@ -7,7 +7,7 @@
 
 ### :house_with_garden: 소개
 해당 페이지는 Flutter로 제작된 [성서봇 애플리케이션](https://play.google.com/store/apps/details?id=com.blogspot.ramming125.kbubot&hl=ko) 인수 인계를 위해 제작되었습니다.<br>
-일대일 멘토링 방식으로 진행되며, Flutter Tutorial 내용부터 시작하여 기초를 다지고 매주 업로드 되는 과제를 직접 해결해 나가는 경험을 통해 <br>문제 해결 능력을 향상시키는 것에 목적을 두고 있습니다.<br>
+일대일 멘토링 방식으로 진행되며, Flutter Tutorial 내용부터 시작하여 기초를 다지고 매주 업로드 되는 과제를 직접 해결해 나가는 경험을 통해 문제 해결 능력을 향상시키는 것에 목적을 두고 있습니다.<br>
 진행 내용이 관련 관계자와 더불어 Flutter에 대해 스터디를 시작하신 분들께 많은 도움이 되기를 희망합니다 :) 
 
 <hr>
