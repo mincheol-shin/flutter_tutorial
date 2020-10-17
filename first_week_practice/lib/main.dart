@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+
 void main() => runApp(My_page());
 
 class My_page extends StatelessWidget {
@@ -8,7 +9,10 @@ class My_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'first practice',
-      home: First_page(),
+     initialRoute: '/',
+      routes: { '/':(context)=> First_page(),
+        '/second':(context)=> Second_page(),
+      },
     );
   }
 }
@@ -21,17 +25,25 @@ class First_page extends StatefulWidget {
 class _First_pageState extends State<First_page> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: RaisedButton(
-          child: Text('Launch screen'),
-          onPressed: (){
-            Navigator.push(
-              context,
-            MaterialPageRoute(builder: (context)=>Second_page()));
-          },
+
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, '/second');
+    });
+
+    return MaterialApp(
+        home: Scaffold(
+         body:Center(
+          child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+          new Text('splash screen',
+          style: new TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30.0,
+          ),),],
+          ),
+         ),
         ),
-      ),
     );
   }
 }
@@ -57,8 +69,8 @@ class _Second_pageState extends State<Second_page> {
         home: Scaffold(
            appBar: new AppBar(
              title: Center(child:
-             new Text("Flutter Tutorial",
-               style: TextStyle(
+              new Text("Flutter Tutorial",
+                 style: TextStyle(
                  color: Colors.black,
                ),
              )
