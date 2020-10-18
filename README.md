@@ -26,3 +26,4 @@
 |주 차|기 간|
 |------|---|
 |[1주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/1%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.12(Mon) ~ 10.18(Sun)|
+|[2주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/2%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.19(Mon) ~ 10.25(Sun)|
