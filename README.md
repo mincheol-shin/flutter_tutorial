@@ -23,7 +23,7 @@
 
 
 ### :clipboard: Assignment 
-|주 차|기 간|
-|------|---|
-|[1주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/1%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.12(Mon) ~ 10.18(Sun)|
-|[2주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/2%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.19(Mon) ~ 10.25(Sun)|
+|주 차|기 간|내 용|
+|------|---|---|
+|[1주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/1%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.12(Mon) ~ 10.18(Sun)|오리엔테이션|
+|[2주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/2%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.19(Mon) ~ 10.25(Sun)|계산기 만들기|
