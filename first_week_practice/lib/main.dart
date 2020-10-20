@@ -2,27 +2,27 @@ import 'package:flutter/material.dart';
 
 
 
-void main() => runApp(My_page());
+void main() => runApp(MyPage());
 
-class My_page extends StatelessWidget {
+class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'first practice',
      initialRoute: '/',
-      routes: { '/':(context)=> First_page(),
-        '/second':(context)=> Second_page(),
+      routes: { '/':(context)=> FirstPage(),
+        '/second':(context)=> SecondPage(),
       },
     );
   }
 }
 
-class First_page extends StatefulWidget {
+class FirstPage extends StatefulWidget {
   @override
-  _First_pageState createState() => _First_pageState();
+  _FirstPageState createState() => _FirstPageState();
 }
 
-class _First_pageState extends State<First_page> {
+class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
 
@@ -48,12 +48,12 @@ class _First_pageState extends State<First_page> {
   }
 }
 
-class Second_page extends StatefulWidget {
+class SecondPage extends StatefulWidget {
   @override
-  _Second_pageState createState() => new _Second_pageState();
+  _SecondPageState createState() => new _SecondPageState();
 }
 
-class _Second_pageState extends State<Second_page> {
+class _SecondPageState extends State<SecondPage> {
 
     int number=0;
     void subtractNumbers() {
