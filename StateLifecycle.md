@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <br>
 
 # :blue_book: Stateful Widget Lifecycle
