@@ -61,6 +61,5 @@
 ###mounted is false
 
 -이 상태에서 state 객체는 결코 다시 mount되지 않으며, setState()가 호출되면 에러가 발생한다.
-=======
-# Lifecycle
->>>>>>> edefd5cdfdddeead4da6c072abfb15f0ef5c5e3f
+
+
