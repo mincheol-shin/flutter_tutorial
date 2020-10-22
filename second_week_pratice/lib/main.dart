@@ -26,10 +26,8 @@ class _CalculatorViewState extends State<CalculatorView> {
         title: Center(child: Text('Flutter Tutorial', style: TextStyle(color: Colors.black),)),),
 
       body: Container(
-
         child: Column(
           children: <Widget>[
-
             //계산 과정 보여주는 텍스트
             Container(
               alignment: Alignment.centerLeft,
@@ -44,39 +42,74 @@ class _CalculatorViewState extends State<CalculatorView> {
               child: Text("0", style: TextStyle(fontSize: 48.0),),
             ),
 
+            Row(
+            children: <Widget>[
+              Flexible(
+                flex: 3,
+                child: Column(
+                children: <Widget>[
 
-              //버튼 ui
-              Row(children: <Widget> [
-
-
-                Flexible(
-                  flex: 3,
-
+                  Flexible(
+                    flex: 1,
+                    child:  Row(
+                    children: <Widget>[
+                      Flexible(flex: 1, child: CustomButton('7'),),
+                      Flexible(flex: 1, child: CustomButton('8'),),
+                      Flexible(flex: 1, child: CustomButton('9'),),
+                    ],
+                  ),
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child:  Row(
+                      children: <Widget>[
+                        Flexible(flex: 1, child: CustomButton('4'),),
+                        Flexible(flex: 1, child: CustomButton('5'),),
+                        Flexible(flex: 1, child: CustomButton('6'),),
+                    ],
+                  ),
                 ),
 
-
-                Flexible(
-                  flex: 1,
-                 child: Column(
-                   children: <Widget>[
-                     Flexible(flex: 1, child: CustomButton("C")),
-                     Flexible(flex: 1, child: CustomButton("/")),
-                     Flexible(flex: 1, child: CustomButton("*")),
-                     Flexible(flex: 1, child: CustomButton("-")),
-                     Flexible(flex: 1, child: CustomButton("+")),
-                     Flexible(flex: 1, child: CustomButton("=")),
-                   ],
-                 ),
+                  Flexible(
+                    flex: 1,
+                    child:  Row(
+                      children: <Widget>[
+                        Flexible(flex: 1, child: CustomButton('1'),),
+                        Flexible(flex: 1, child: CustomButton('2'),),
+                        Flexible(flex: 1, child: CustomButton('3'),),
+                      ],
+                    ),
+                  ),
+                  
+                  Flexible(flex: 1, child: CustomButton('0'),),
+                ],
                 ),
+              ),
 
-              ],),
 
+              Flexible(
+                flex: 1,
+                child: Column(
+                  children: <Widget>[
+                    Flexible(flex: 1, child: MathButton('C'),),
+                    Flexible(flex: 1, child: MathButton('/'),),
+                    Flexible(flex: 1, child: MathButton('*'),),
+                    Flexible(flex: 1, child: MathButton('-'),),
+                    Flexible(flex: 1, child: MathButton('+'),),
+                    Flexible(flex: 1, child: MathButton('='),),
+
+                  ],
+                ),
+              ),
+            ],
+            ),
           ],
         ),
       ),
     );
   }
 }
+
 
 class CustomButton extends StatelessWidget {
   String text;
@@ -86,20 +119,34 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      margin:  EdgeInsets.all(6.0),
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          color: Colors.orange),
-
-      child: new Text(
-        text,
-        style: new TextStyle(color: Colors.white, fontSize: 26.0),
+      color: Colors.white,
+      child:  Center(
+        child: Text(
+          text,
+          style:  TextStyle(color: Colors.black, fontSize: 10.0),
+        ),
       ),
     );
   }
 }
 
+class MathButton extends StatelessWidget {
+  String text;
+
+  MathButton(this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+      color: Colors.white,
+      child:  Center(
+        child: Text(
+          text,
+          style:  TextStyle(color: Colors.black, fontSize: 10.0),
+        ),
+      ),
+    );
+  }
+}
 
 
