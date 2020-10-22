@@ -1,107 +1,141 @@
 import 'package:flutter/material.dart';
 
-void main()=> runApp(Calculator());
+void main() => runApp(MyApp());
 
-class Calculator extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Calculator',
-      home: CalculatorView(),
+      home: Calculator(),
     );
   }
 }
 
-class CalculatorView extends StatefulWidget {
+class Calculator extends StatefulWidget {
   @override
-  _CalculatorViewState createState() => _CalculatorViewState();
+  _CalculatorState createState() => _CalculatorState();
 }
 
-class _CalculatorViewState extends State<CalculatorView> {
+class _CalculatorState extends State<Calculator> {
+
+   FlatButton(String button_txt, Color button_color, Color txt_color) {
+    return Expanded(
+      child: RaisedButton(
+        onPressed: () {},
+        child: Text(
+          '$button_txt',
+          style: TextStyle(
+            fontSize: 35,
+            color: txt_color,
+          ),
+        ),
+        color: button_color,
+      ),
+    );
+  }
+
   @override
-
   Widget build(BuildContext context) {
+    //Calculator
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.white, elevation: 0.0,
-        title: Center(child: Text('Flutter Tutorial', style: TextStyle(color: Colors.black),)),),
-
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0.0,
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        title: Center(
+            child: Text(
+          'Flutter Tutorial',
+          style: TextStyle(color: Colors.black),
+        )),
+      ),
       body: Container(
+        margin:EdgeInsets.all(0.0),
         child: Column(
           children: <Widget>[
             //계산 과정 보여주는 텍스트
             Container(
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-              child: Text("0", style: TextStyle(fontSize: 20.0),),
+              child: Text(
+                "0",
+                style: TextStyle(fontSize: 20.0),
+              ),
             ),
-
             //입력 + 답 보여주는 텍스트
             Container(
               alignment: Alignment.centerRight,
               padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-              child: Text("0", style: TextStyle(fontSize: 48.0),),
+              child: Text(
+                "0",
+                style: TextStyle(fontSize: 48.0),
+              ),
             ),
 
-            Row(
-            children: <Widget>[
-              Flexible(
-                flex: 3,
-                child: Column(
+            Expanded(
+              child: Row(
                 children: <Widget>[
-
+                  //숫자 연산 ui
                   Flexible(
-                    flex: 1,
-                    child:  Row(
-                    children: <Widget>[
-                      Flexible(flex: 1, child: CustomButton('7'),),
-                      Flexible(flex: 1, child: CustomButton('8'),),
-                      Flexible(flex: 1, child: CustomButton('9'),),
-                    ],
-                  ),
-                  ),
-                  Flexible(
-                    flex: 1,
-                    child:  Row(
+                    flex: 3,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Flexible(flex: 1, child: CustomButton('4'),),
-                        Flexible(flex: 1, child: CustomButton('5'),),
-                        Flexible(flex: 1, child: CustomButton('6'),),
-                    ],
-                  ),
-                ),
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              FlatButton('7', Colors.white, Colors.black),
+                              FlatButton('8', Colors.white, Colors.black),
+                              FlatButton('9', Colors.white, Colors.black),
+                            ],
+                          ),
+                        ),
 
-                  Flexible(
-                    flex: 1,
-                    child:  Row(
-                      children: <Widget>[
-                        Flexible(flex: 1, child: CustomButton('1'),),
-                        Flexible(flex: 1, child: CustomButton('2'),),
-                        Flexible(flex: 1, child: CustomButton('3'),),
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              FlatButton('4', Colors.white, Colors.black),
+                              FlatButton('5', Colors.white, Colors.black),
+                              FlatButton('6', Colors.white, Colors.black),
+                            ],
+                          ),
+                        ),
+
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              FlatButton('1', Colors.white, Colors.black),
+                              FlatButton('2', Colors.white, Colors.black),
+                              FlatButton('3', Colors.white, Colors.black),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: FlatButton('0', Colors.white, Colors.black),
+                        ),
                       ],
                     ),
                   ),
-                  
-                  Flexible(flex: 1, child: CustomButton('0'),),
+
+                  //사칙연산 ui
+                  Flexible(
+                    flex: 1,
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          FlatButton('C', Colors.orange, Colors.white),
+                          FlatButton('/', Colors.orange, Colors.white),
+                          FlatButton('*', Colors.orange, Colors.white),
+                          FlatButton('-', Colors.orange, Colors.white),
+                          FlatButton('+', Colors.orange, Colors.white),
+                          FlatButton('=', Colors.orange, Colors.white),
+                    ]),
+                  ),
                 ],
-                ),
               ),
-
-
-              Flexible(
-                flex: 1,
-                child: Column(
-                  children: <Widget>[
-                    Flexible(flex: 1, child: MathButton('C'),),
-                    Flexible(flex: 1, child: MathButton('/'),),
-                    Flexible(flex: 1, child: MathButton('*'),),
-                    Flexible(flex: 1, child: MathButton('-'),),
-                    Flexible(flex: 1, child: MathButton('+'),),
-                    Flexible(flex: 1, child: MathButton('='),),
-
-                  ],
-                ),
-              ),
-            ],
             ),
           ],
         ),
@@ -109,44 +143,3 @@ class _CalculatorViewState extends State<CalculatorView> {
     );
   }
 }
-
-
-class CustomButton extends StatelessWidget {
-  String text;
-
-  CustomButton(this.text);
-
-  @override
-  Widget build(BuildContext context) {
-    return  Container(
-      color: Colors.white,
-      child:  Center(
-        child: Text(
-          text,
-          style:  TextStyle(color: Colors.black, fontSize: 10.0),
-        ),
-      ),
-    );
-  }
-}
-
-class MathButton extends StatelessWidget {
-  String text;
-
-  MathButton(this.text);
-
-  @override
-  Widget build(BuildContext context) {
-    return  Container(
-      color: Colors.white,
-      child:  Center(
-        child: Text(
-          text,
-          style:  TextStyle(color: Colors.black, fontSize: 10.0),
-        ),
-      ),
-    );
-  }
-}
-
-
