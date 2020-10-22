@@ -24,19 +24,21 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> {
   @override
-  Widget build(BuildContext context) {
 
+  void initState(){
+    super.initState();
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacementNamed(context, '/second');
-    });
+    });}
 
+  Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
          body:Center(
           child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          new Text('splash screen',
+            new Text('splash screen',
           style: new TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30.0,
