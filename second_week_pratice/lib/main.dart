@@ -9,60 +9,60 @@ class Calculator extends StatefulWidget {
 
 class _CalculatorState extends State<Calculator> {
 
-  //계산기 로직
-  double num1 = 0.0;
-  double num2 = 0.0;
-  double result = 0.0;
+  String input ='0';
+  List <String> result;
+  int num1=0;
+  int num2=0;
 
-  void buttonPressed(List<dynamic> buttonTxt) {
+  void buttonPressed(String buttonTxt) {
 
-    //1. 받은 숫자를 표시해야하는데 리스트로 받은 숫자를 바로 result로 보내는 법을 잘 모르겠습니다.
-    //2. 리스트를 초기화 하는 법을 모르겠습니당 ㅜ
+    setState((){
 
-    //result에 버튼 누른 숫자를 받는 곳
-
-
-    if (buttonTxt is String) {
-
-      //리스트로 받은 숫자들을 자릿수에 맞게 합치는 법
-      for (int a = 0; a < buttonTxt.length - 1; a++) {
-        buttonTxt as num;
-        num2 = num2 * 10 + buttonTxt[a];
+      if(input=='0'){
+        input=buttonTxt;
       }
 
-      // 각 연산기호에 맞게 구현해본 것.
-      if (buttonTxt == "C") {
-        num1 = 0.0;
-        num2 = 0.0;
-        result = 0;
-      } else if (buttonTxt == "+" ||
-          buttonTxt == "-" ||
-          buttonTxt == "/" ||
-          buttonTxt == "*") {
-        switch (buttonTxt[buttonTxt.length - 1]) {
-          case ("+"):
-            num1 = num1 + num2;
-            result=0;
-            break;
-          case ("-"):
-            num1 = num1 - num2;
-            result=0;
-            break;
-          case ("/"):
-            num1 = num1 / num2;
-            result=0;
-            break;
-          case ("*"):
-            num1 = num1 * num2;
-            result=0;
-            break;
+      else if(buttonTxt=='+'||buttonTxt=='-'){
+        result.add(input);
+        result.add(buttonTxt);
+
+        if(result[result.length-1]=='+'||result[result.length-1]=='-'){
+          result[result.length-1]=buttonTxt;
         }
-        //리스트를 초기화 시킬 자리.
 
-      } else if (buttonTxt == "=") {
-        result=num1;
+        input='0';
       }
-    }
+      else if(buttonTxt=='C'||buttonTxt=='='){
+
+        result.add(input);
+
+        if(buttonTxt=='C'){
+          result.length=0;
+          input='0';
+        }
+
+        if(buttonTxt=='='){
+          for(int a=0; a<result.length;a++){
+            if(a%2==0){
+             num2 = int.parse(result[a]);
+            }
+            if(a%2==1){
+              if(result[a]=='+'){
+                num1+=num2;
+              }
+              if(result[a]=="-"){
+                num1-=num2;
+              }
+            }
+          }
+          input= num1 as String;
+        }
+      }
+      else{
+        input+=buttonTxt;
+      }
+
+    });
   }
 
   @override
@@ -87,7 +87,7 @@ class _CalculatorState extends State<Calculator> {
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
             child: Text(
-              "0",
+              'HI',
               style: TextStyle(fontSize: 20.0),
             ),
           ),
@@ -96,7 +96,7 @@ class _CalculatorState extends State<Calculator> {
             alignment: Alignment.centerRight,
             padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
             child: Text(
-              "$result",
+              '$input',
               style: TextStyle(fontSize: 48.0),
             ),
           ),
@@ -152,8 +152,6 @@ class _CalculatorState extends State<Calculator> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         flatButton('C', Colors.orange, Colors.white),
-                        flatButton('/', Colors.orange, Colors.white),
-                        flatButton('*', Colors.orange, Colors.white),
                         flatButton('-', Colors.orange, Colors.white),
                         flatButton('+', Colors.orange, Colors.white),
                         flatButton('=', Colors.orange, Colors.white),
