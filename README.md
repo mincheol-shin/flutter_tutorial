@@ -27,5 +27,5 @@
 |------|---|---|
 |[1주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/1%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.12(Mon) ~ 10.18(Sun)|오리엔테이션|
 |[2주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/2%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.19(Mon) ~ 10.25(Sun)|계산기 만들기|
-|[3주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/3%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.26(Mon) ~ 11.01(Sun)|스크롤 가능한 스크린 제작|
+|[3주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/3%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.10.26(Mon) ~ 11.01(Sun)|스크롤 뷰 제작|
 
