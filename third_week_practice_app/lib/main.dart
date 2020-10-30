@@ -10,17 +10,16 @@ class BookScroll extends StatefulWidget {
 class _BookScrollState extends State<BookScroll> {
 
   final List<Map<String, dynamic>> book_list=[
-    {
-      'booknum1': {'name': '이삭', 'retrunday': '', 'borrowday': '', 'writer': ''},
-      'booknum2': {'name': '개구리', 'retrunday': '', 'borrowday': '', 'writer': ''},
-      'booknum3': {'name': '강아지', 'retrunday': '', 'borrowday': '', 'writer': ''},
-      'booknum4': {'name': '고양이', 'retrunday': '', 'borrowday': '', 'writer': ''}
-    },
+      {'name': '꾸뻬 씨의 행복 여행', 'retrunday': '2020/1/30', 'borrowday': '2020/1/22', 'writer': '프랑수아 를로르'},
+
   ];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'NotoSansKR',
+      ),
       home: new Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -33,11 +32,55 @@ class _BookScrollState extends State<BookScroll> {
               style: TextStyle(color: Colors.black),
             )),
           ),
+
           body: ListView.builder(
             itemCount: book_list.length,
             itemBuilder: (context, index) {
-              return ListTile(
-
+              return Container(
+                height: 150.0,
+                  child: Row(
+                    children: <Widget>[
+                      Flexible(
+                      flex:3,
+                  ),
+                      Flexible(
+                        flex:7,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left:10.0,),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("${book_list[index]["name"]}",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18.0,
+                                  color: Colors.black,
+                                  fontFamily: 'NotoSansKR',
+                                ),
+                              ),
+                              Text(
+                                "${book_list[index]["writer"]}",
+                                style: TextStyle(
+                                  fontSize: 12.0,
+                                  color: Colors.grey,
+                                  fontFamily: 'NotoSansKR',
+                                ),
+                              ),
+                              const SizedBox(height: 80.0),
+                              Text(
+                                "대출일 : ${book_list[index]["borrowday"]} ~ 반납일 : ${book_list[index]["retrunday"]}",
+                                style: TextStyle(
+                                  fontSize: 10.0,
+                                  color: Colors.grey,
+                                  fontFamily: 'NotoSansKR',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
               );
             },
           )),
