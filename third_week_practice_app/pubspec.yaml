@@ -60,13 +60,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-
-  flutter:
-
     fonts:
-      - family: Noto Sans KR
-      - fonts:
-      - asset: font/NotoSansKR-Medium.otf
+    - family: BlackHanSans
+      fonts:
+        - asset: fonts/BlackHanSans-Regular.ttf
 
   #   - family: Trajan Pro
   #     fonts:

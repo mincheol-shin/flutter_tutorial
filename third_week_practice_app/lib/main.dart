@@ -18,7 +18,7 @@ class _BookScrollState extends State<BookScroll> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: 'NotoSansKR',
+        fontFamily: 'BlackHanSans',
       ),
       home: new Scaffold(
           backgroundColor: Colors.white,
@@ -42,6 +42,7 @@ class _BookScrollState extends State<BookScroll> {
                     children: <Widget>[
                       Flexible(
                       flex:3,
+
                   ),
                       Flexible(
                         flex:7,
@@ -55,7 +56,7 @@ class _BookScrollState extends State<BookScroll> {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18.0,
                                   color: Colors.black,
-                                  fontFamily: 'NotoSansKR',
+                                  fontFamily: 'BlackHanSans',
                                 ),
                               ),
                               Text(
@@ -63,7 +64,7 @@ class _BookScrollState extends State<BookScroll> {
                                 style: TextStyle(
                                   fontSize: 12.0,
                                   color: Colors.grey,
-                                  fontFamily: 'NotoSansKR',
+                                  fontFamily: 'BlackHanSans',
                                 ),
                               ),
                               const SizedBox(height: 80.0),
@@ -72,7 +73,7 @@ class _BookScrollState extends State<BookScroll> {
                                 style: TextStyle(
                                   fontSize: 10.0,
                                   color: Colors.grey,
-                                  fontFamily: 'NotoSansKR',
+                                  fontFamily: 'BlackHanSans',
                                 ),
                               ),
                             ],
