@@ -2,32 +2,13 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-
-class Post {
-  final int userid;
-  final int id;
-  final String title;
-  final String body;
-
-  Post({this.userid, this.id, this.title, this.body});
-
-  factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
-        userid: json['userId'],
-        id: json['id'],
-        title: json['title'],
-        body: json['body']);
-  }
-}
-
-Future<Post> fetchPost()async{
+Future fetchPost() async {
+  await Future.delayed(Duration(seconds: 2));
   final response = await http.get('https://jsonplaceholder.typicode.com/posts');
-
-
+  return jsonDecode(response.body);
 }
 
 void main() => runApp(MaterialApp(home: Page()));
-
 
 class Page extends StatefulWidget {
   @override
@@ -35,19 +16,17 @@ class Page extends StatefulWidget {
 }
 
 class _PageState extends State<Page> {
-
-
   @override
   int index;
-
+  var user;
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
         child: PageView(
           children: <Widget>[
-            for(index=1; index<4; index++)(
-              SizedBox.expand(
+            for (index = 1; index < 4; index++)
+              (SizedBox.expand(
                 child: Container(
                   child: Center(
                     child: Column(
@@ -67,8 +46,7 @@ class _PageState extends State<Page> {
                     ),
                   ),
                 ),
-              )
-            ),
+              )),
             SizedBox.expand(
               child: Container(
                 child: Center(
@@ -87,8 +65,54 @@ class _PageState extends State<Page> {
                       ),
                       const SizedBox(height: 40.0),
                       RaisedButton(
-                        onPressed: fetchPost,
-                        textColor: Colors.white, child: (Text("DONE",)),
+                        onPressed: () async {
+                          user = await fetchPost();
+                          print(user.length);
+                          FutureBuilder(
+                            future: fetchPost(),
+                            builder:
+                                (BuildContext context, AsyncSnapshot snapshot) {
+                              if (snapshot.hasData) {
+
+                                return Scaffold(
+                                  backgroundColor: Colors.white,
+                                  appBar: AppBar(
+                                    elevation: 0.0,
+                                    centerTitle: true,
+                                    backgroundColor: Colors.white,
+                                    title: Text(
+                                      'Flutter Tutorial',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ),
+                                  body: ListView.builder(
+                                    itemCount: user.length,
+                                    itemBuilder: (context, index) {
+                                      return Container(
+                                        height: 150.0,
+                                        child: Column(
+                                          children: <Widget>[
+                                            Text("${user[index]["userId"]}"),
+                                            Text("${user[index]["id"]}"),
+                                            Text("${user[index]["title"]}"),
+                                            Text("${user[index]["body"]}"),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                );
+                              } else {
+                                return CircularProgressIndicator();
+                              }
+                            },
+                          );
+
+                        },
+                        textColor: Colors.white,
+                        child: (Text(
+                          "DONE",
+                        )),
                         color: Colors.blue,
                       ),
                     ],
