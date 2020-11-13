@@ -31,5 +31,4 @@
 |[4주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/4%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.11.02(Mon) ~ 11.08(Sun)|Introduction Screen, FutureBuilder|
 |[5주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/5%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.11.09(Mon) ~ 11.15(Sun)| Sign in, Sign up screen|
 |[6주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/6%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%95.md)|2020.11.16(Mon) ~ 11.22(Sun)|Provider|
-
-
+|[7 ~ 12주차](https://github.com/mincheol-shin/flutter_tutorial/blob/master/assignment/7%EC%A3%BC%EC%B0%A8%20~%2012%EC%A3%BC%EC%B0%A8.md)|2020.11.23(Mon) ~ 12.31(Sun)|프로젝트 진행|
