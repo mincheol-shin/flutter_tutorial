@@ -5,9 +5,6 @@ import 'package:flutter/widgets.dart';
 
 void main() => runApp(MyApp());
 
-final TextEditingController _idController = TextEditingController();
-final TextEditingController _passwordController = TextEditingController();
-final TextEditingController _pswdcheckController = TextEditingController();
 
 class MyApp extends StatelessWidget {
   @override
@@ -33,6 +30,8 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   @override
 
+  final TextEditingController _idController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,6 +87,7 @@ class _FirstPageState extends State<FirstPage> {
                   height: 20,
                 ),
                 TextFormField(
+                  obscureText: true,
                   controller: _passwordController,
                   decoration: InputDecoration(
                     labelText: "비밀번호 입력",
@@ -121,7 +121,7 @@ class _FirstPageState extends State<FirstPage> {
                     textColor: Colors.grey,
                     color: Colors.white,
                     child: Text('로그인'),
-                    onPressed: () {
+                    onPressed: (){
                     },
                   ),
                 ),
@@ -161,6 +161,11 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   @override
+
+  final TextEditingController _idController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _pswdcheckController = TextEditingController();
+
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset : false,
@@ -292,6 +297,8 @@ class ThirdPage extends StatefulWidget {
 
 class _ThirdPageState extends State<ThirdPage> {
   @override
+  final TextEditingController _nameController = TextEditingController();
+
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset : false,
@@ -315,7 +322,7 @@ class _ThirdPageState extends State<ThirdPage> {
                 height: 90.0,
               ),
               TextFormField(
-                controller: _pswdcheckController,
+                controller: _nameController,
                 decoration: InputDecoration(
                   labelText: "닉네임 입력",
                   labelStyle: TextStyle(
@@ -360,3 +367,5 @@ class _ThirdPageState extends State<ThirdPage> {
     );
   }
 }
+
+
